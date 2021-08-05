@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import dev.janaite.movieflix.entities.Movie;
 
-public class MovieDTO implements Serializable {
+public class MovieCompleteDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
@@ -16,10 +16,10 @@ public class MovieDTO implements Serializable {
 
 	private GenreDTO genre;
 
-	public MovieDTO() {
+	public MovieCompleteDTO() {
 	}
 
-	public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis,
+	public MovieCompleteDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis,
 			GenreDTO genre) {
 		super();
 		this.id = id;
@@ -31,7 +31,7 @@ public class MovieDTO implements Serializable {
 		this.genre = genre;
 	}
 
-	public MovieDTO(Movie entity) {
+	public MovieCompleteDTO(Movie entity) {
 		id = entity.getId();
 		title = entity.getTitle();
 		subTitle = entity.getSubTitle();
