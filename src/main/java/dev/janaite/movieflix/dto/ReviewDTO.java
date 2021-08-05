@@ -2,6 +2,8 @@ package dev.janaite.movieflix.dto;
 
 import java.io.Serializable;
 
+import dev.janaite.movieflix.entities.Review;
+
 public class ReviewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -9,16 +11,20 @@ public class ReviewDTO implements Serializable {
 	private String text;
 	private Long movieId;
 	private UserDTO user;
-	
+
 	public ReviewDTO() {
 	}
-	
+
 	public ReviewDTO(Long id, String text, Long movieId, UserDTO user) {
 		super();
 		this.id = id;
 		this.text = text;
 		this.movieId = movieId;
 		this.user = user;
+	}
+
+	public ReviewDTO(Review entity) {
+		this(entity.getId(), entity.getText(), entity.getMovie().getId(), new UserDTO(entity.getUser()));
 	}
 
 	public Long getId() {
